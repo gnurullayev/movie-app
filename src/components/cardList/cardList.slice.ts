@@ -14,6 +14,8 @@ interface Product {
     price:number,
     rating:Rating
     title:string
+    quanitity:number
+    like:boolean
 }
 
 const initialState:Product[] = []
@@ -23,12 +25,17 @@ const prodactsSlice = createSlice({
     initialState,
     reducers: {
         allProducts: (state, action:PayloadAction<Product[]>) => {
+            const newArr = action.payload.map(product => ({...product, quanitity:0, like:false}))
+            localStorage.setItem("products",JSON.stringify(newArr))
+            return newArr
+        },
+        filterProducts:(state, action:PayloadAction<Product[]>) => {
             return action.payload
         }
     }
 })
 
-export const { allProducts } = prodactsSlice.actions;
+export const { allProducts,filterProducts } = prodactsSlice.actions;
 
 export const getAllProducts = (state: RootState) => state.products;
 

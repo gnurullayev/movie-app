@@ -1,8 +1,11 @@
 import React from 'react'
+import styles from "./shopList.module.css"
 
 const ShopList = () => {
   return (
-    <div>ShopList</div>
+    <div className={styles.conten}>
+      <h2></h2>
+    </div>
   )
 }
 
