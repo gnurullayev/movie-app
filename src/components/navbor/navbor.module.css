@@ -1,0 +1,140 @@
+.nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    height: calc(100vh);
+    padding: 0 20px; 
+    padding-top: 63px;
+    width: 100%;
+    max-width: 250px;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    border: 1px solid rgba(164, 164, 164, 0.3);
+    box-shadow: 5px 5px 20px rgba(133, 133, 133, 0.2);
+    background-color: var(--box-bg-white);
+}
+
+.dark {
+    background-color: var(--box-bg-black);
+}
+
+.dark .nav_link {
+    color: var(--text-color-white);
+}
+
+.nav_active {
+    max-width: 80px;
+    padding: 0 15px; 
+    justify-content: center;
+    padding-top: 63px;
+    overflow: hidden;
+    transition: all 0.3s linear;
+}
+.nav_active .nav_link_span {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.nav_list  {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
+.nav_link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color:var(--text-color-black);
+    font-size: 20px;
+}
+
+.nav_link_mode {
+    justify-content: space-between;
+} 
+
+.nav_img {
+    width: 30px;
+    height: 30px;
+}
+
+.user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid red;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: var(--box-bg-white);
+    border: 0;
+    box-shadow: 5px 5px 20px rgba(133, 133, 133, 0.25);
+    cursor: pointer;
+}
+
+.dark .btn {
+    background-color: var(--bg-color-black);
+    cursor: pointer;
+}
+
+
+.switch_input {
+    display: none;
+}
+
+.switch {
+    --switch-width: 80px;
+    --switch-height: 40px;
+    --switch-border: calc(var(--switch-height) / 10);
+    --switch-thumb-size: calc(var(--switch-height) - var(--switch-border) * 2);
+    --switch-width-inside: calc(var(--switch-width) - var(--switch-border) * 2);
+    display: block;
+    box-sizing: border-box;
+    width: var(--switch-width);
+    height: var(--switch-height);
+    border: var(--switch-border) solid var(--color-switch-bg);
+    border-radius: var(--switch-height);
+    background-color: var(--color-switch-bg);
+    cursor: pointer;
+    margin: var(--switch-margin) 0;
+    transition: 300ms 100ms;
+
+    position: relative;
+}
+
+.switch::before {
+    content: '';
+    background-color: var(--color-switch-thumb);
+    height: var(--switch-thumb-size);
+    width: var(--switch-thumb-size);
+    border-radius: var(--switch-thumb-size);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    transition: 300ms, width 600ms;
+}
+
+.switch_input:checked + .switch {
+    background-color: var(--color-switch-bg-active);
+    border-color: var(--color-switch-bg-active);
+}
+
+.switch:active::before {
+    width: 80%;
+}
+
+.switch_input:checked + .switch::before {
+    left: 100%;
+    transform: translateX(-100%);
+}

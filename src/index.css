@@ -4,3 +4,70 @@
   box-sizing: border-box;
   list-style: none;
 }
+
+
+
+:root {
+  --bg-color-black: #424242 ;
+  --text-color-white:#E0E0E0 ;
+
+  --bg-color-white:#E5E5E5;
+  --text-color-black:#474747;
+
+  --box-bg-black:#BEBEBE80;
+  --box-bg-white: #fff;
+
+  --text-light:#C9C9C9;
+  --cart-text-white:#F3F3F3;
+  --color-green: rgba(102, 255, 117, 0.5);
+
+  --border-color: rgba(190, 190, 190, 0.5);
+
+  --box-shadov: rgba(35, 35, 35, 0.2);
+
+
+  /* checkbox verable */
+  --color-bg: #458;
+  --color-switch-thumb: #ccc;
+  --color-switch-bg: #777;
+  --color-switch-bg-active: #245;
+  
+  --switch-size: 100px;
+}
+
+
+
+
+
+body {
+  font-family: serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 18px;
+
+
+}
+
+.App {
+ display: flex;
+ width: 100vw;
+ min-height: 100vh;
+ width: 100%;
+ gap: 20px;
+}
+
+.dark {
+  color: var(--text-color-white);
+  background-color: var(--bg-color-black);
+}
+
+.light {
+  color: var(--text-color-black);
+  background-color: var(--bg-color-white);
+}
+
+.app-content {
+  display: block;
+  width: 100%;
+}
